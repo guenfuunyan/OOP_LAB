@@ -1,0 +1,21 @@
+1. What class should implement the Comparable interface?
+Lớp Media nên triển khai Comparable<Media> vì:
+Media là lớp cha trừu tượng của tất cả các loại media (DigitalVideoDisc, CompactDisc, Book).
+Việc triển khai Comparable trong Media cho phép tất cả các lớp con kế thừa và sử dụng compareTo() để sắp xếp.
+Các lớp con có thể ghi đè compareTo() nếu cần quy tắc sắp xếp riêng (như DigitalVideoDisc ở trên).
+2. In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+Trong Media.java, compareTo() được triển khai để sắp xếp:
+Theo title (tăng dần, alphabetically) bằng title.compareTo().
+Nếu title giống nhau, theo cost (giảm dần) bằng Float.compare(other.cost, this.cost).
+Trong DigitalVideoDisc.java, compareTo() được ghi đè để sắp xếp:
+Theo title (tăng dần).
+Nếu title giống nhau, theo length (giảm dần).
+Nếu length giống nhau, theo cost (giảm dần).
+3. Can we have two ordering rules (by title then cost and by cost then title) if we use this Comparable approach?
+Không, sử dụng Comparable chỉ cho phép một quy tắc sắp xếp mặc định (thông qua compareTo()). Trong trường hợp này, quy tắc mặc định là "theo title, rồi cost".
+Để hỗ trợ quy tắc khác (theo cost, rồi title), cần sử dụng Comparator bổ sung, như trong phương thức sortByCost() của Cart. Điều này cho thấy hạn chế của Comparable khi cần nhiều quy tắc sắp xếp.
+4. Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+Đã xử lý ở bước trên:
+Media có compareTo() mặc định (theo title, rồi cost).
+DigitalVideoDisc ghi đè compareTo() để áp dụng quy tắc riêng: theo title (tăng dần), nếu title giống nhau thì theo length (giảm dần), nếu length giống nhau thì theo cost (giảm dần).
+Khi gọi Collections.sort() trên ArrayList<Media>, các đối tượng DigitalVideoDisc sẽ sử dụng compareTo() của chúng, còn các đối tượng CompactDisc và Book sẽ sử dụng compareTo() từ Media.
