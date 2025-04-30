@@ -1,0 +1,57 @@
+1.3 So sánh các thành phần của Swing và AWT
+1. Top-Level Containers
+
+Tính năng		AWT		Swing
+Container chính		Frame		JFrame
+Panel cơ bản		Panel		JPanel
+Dialog			Dialog		JDialog
+Window			Window		JWindow
+Applet			Applet		JApplet
+Khác biệt chính:
+
+Tất cả các class của Swing đều thêm tiền tố J.
+
+Swing là lightweight (vẽ bằng Java), AWT là heavyweight (dựa vào native OS).
+
+2. Tên lớp của Components
+
+Component	AWT Class	Swing Class
+Nút bấm		Button		JButton
+Nhãn		Label		JLabel
+Ô nhập liệu	TextField	JTextField
+Vùng văn bản	TextArea	JTextArea
+Checkbox	Checkbox	JCheckBox
+Lựa chọn đơn	Choice		JComboBox
+Danh sách	List		JList
+Menu		Menu		JMenu
+Lưu ý:
+
+Swing mở rộng thêm nhiều components không có trong AWT như JTable, JTree, JTabbedPane, JProgressBar...
+
+3. So sánh xử lý sự kiện (Event-handling)
+
+Khía cạnh	AWT			Swing
+Gói event	java.awt.event (chung)	java.awt.event (dùng lại)
+Listener chính	ActionListener, v.v.	Giống AWT
+Event Queue	Native OS		Java quản lý qua EventQueue riêng
+Threading	Đơn luồng		Sử dụng EDT (Event Dispatch Thread)
+Khác biệt chính:
+
+Swing yêu cầu thao tác GUI chạy trên EDT để đảm bảo thread-safety.
+
+AWT dễ gây lỗi khi thao tác giao diện trong background thread.
+
+4. So sánh giao diện hiển thị
+
+Tính chất	AWT			Swing
+Look & Feel	Theo hệ điều hành	Tùy biến được (Metal, Nimbus…)
+Rendering	Dựa vào OS		Java tự vẽ
+Anti-aliasing	Không hỗ trợ tốt	Hỗ trợ tốt
+Giao diện	Cổ điển, lỗi thời	Hiện đại, đồng nhất
+
+5. Tổng kết ưu/nhược điểm
+
+		AWT					Swing
+Ưu điểm		Nhẹ, hiệu suất cao			Giao diện đẹp, component phong phú
+Nhược điểm	Phụ thuộc hệ điều hành, hạn chế		Nặng hơn, chiếm bộ nhớ hơn
+Phù hợp với	Ứng dụng đơn giản			Ứng dụng desktop phức tạp
