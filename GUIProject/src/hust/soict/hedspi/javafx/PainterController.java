@@ -1,11 +1,12 @@
 package hust.soict.hedspi.javafx;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.event.ActionEvent;
 
 public class PainterController {
 
@@ -13,22 +14,26 @@ public class PainterController {
     private Pane drawingAreaPane;
 
     @FXML
-    private void drawingAreaMouseDragged(MouseEvent event) {
-        Circle circle = createCircleAt(event.getX(), event.getY());
-        drawingAreaPane.getChildren().add(circle);
+    private RadioButton pen;
+
+    @FXML
+    private RadioButton eraser;
+
+    @FXML
+    void drawingAreaMouseDragged(MouseEvent event) {
+        Color colorToDraw = Color.BLACK;
+
+        // Nếu chọn eraser thì vẽ màu trắng (màu nền)
+        if (eraser.isSelected()) {
+            colorToDraw = Color.WHITE;
+        }
+
+        Circle newCircle = new Circle(event.getX(), event.getY(), 4, colorToDraw);
+        drawingAreaPane.getChildren().add(newCircle);
     }
 
     @FXML
-    private void clearButtonPressed(ActionEvent event) {
+    void clearButtonPressed(ActionEvent event) {
         drawingAreaPane.getChildren().clear();
-    }
-
-    private Circle createCircleAt(double x, double y) {
-        Circle circle = new Circle();
-        circle.setCenterX(x);
-        circle.setCenterY(y);
-        circle.setRadius(4);
-        circle.setFill(Color.BLACK);
-        return circle;
     }
 }
