@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AimsProject/AimsProject.iml" filepath="$PROJECT_DIR$/AimsProject/AimsProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab05/AimsProject/AimsProject2.iml" filepath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab05/AimsProject/AimsProject2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab05/GUIProject/GUIProject.iml" filepath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab05/GUIProject/GUIProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GUIProject/GUIProject2.iml" filepath="$PROJECT_DIR$/GUIProject/GUIProject2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OOP_Lab_05.iml" filepath="$PROJECT_DIR$/.idea/OOP_Lab_05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/OtherProjects.iml" filepath="$PROJECT_DIR$/OtherProjects/OtherProjects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/hedspi.iml" filepath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/hedspi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab02/lab02.iml" filepath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab02/lab02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab03/lab03.iml" filepath="$PROJECT_DIR$/OtherProjects/src/hust/soict/hedspi/lab03/lab03.iml" />
+    </modules>
+  </component>
+</project>
